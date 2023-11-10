@@ -29,7 +29,7 @@ def find_last_page_number(response_from_server):
 def get_all_pages(last_page_number):
     urls = []
     for i in range(1, last_page_number + 1):
-        urls.append("https://online.metro-cc.ru/category/chaj-kofe-kakao/kofe?page=" + str(i))
+        urls.append("https://online.metro-cc.ru/category/ovoshchi-i-frukty/frukty?page=" + str(i))
     return urls
 
 #Возвращает list Брендов
@@ -78,7 +78,7 @@ def dump_into_xlsx(xlsx, id, name, link, reg_pr, promo_pr, brand):
 
 #Время работы программы можно сократить при использовании мультипроцессинга (в комментариях). К сожалению, мультипроцессинг не поддерживает работу с xlsx
 if __name__ == '__main__':
-    url = 'https://online.metro-cc.ru/category/chaj-kofe-kakao/kofe?page=1'
+    url = 'https://online.metro-cc.ru/category/ovoshchi-i-frukty/frukty?page=1'
 
     response = requests.get(url)
     last_page = find_last_page_number(response)
